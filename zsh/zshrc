@@ -115,4 +115,36 @@ unset __conda_setup
 # <<< conda initialize <<<
 export PATH="/home/johncreed/anaconda3/bin:$PATH"
 
-conda activate python3.6
+#conda activate python3.6
+
+# alias for NTU workstations
+alias blinux1="ssh b02701216@linux1" 
+alias blinux2="ssh b02701216@linux2" 
+alias blinux3="ssh b02701216@linux3" 
+alias blinux4="ssh b02701216@linux4" 
+alias blinux5="ssh b02701216@linux5" 
+alias blinux6="ssh b02701216@linux6" 
+alias blinux7="ssh b02701216@linux7" 
+alias blinux8="ssh b02701216@linux8" 
+alias blinux9="ssh b02701216@linux9" 
+alias blinux10="ssh b02701216@linux10" 
+alias blinux11="ssh b02701216@linux11" 
+alias blinux12="ssh b02701216@linux12" 
+alias blinux13="ssh b02701216@linux13" 
+alias blinux14="ssh b02701216@linux14" 
+alias blinux15="ssh b02701216@linux15" 
+alias rlinux1="ssh r08922195@linux1" 
+alias rlinux2="ssh r08922195@linux2" 
+alias rlinux3="ssh r08922195@linux3" 
+alias rlinux4="ssh r08922195@linux4" 
+alias rlinux5="ssh r08922195@linux5" 
+alias rlinux6="ssh r08922195@linux6" 
+alias rlinux7="ssh r08922195@linux7" 
+alias rlinux8="ssh r08922195@linux8" 
+alias rlinux9="ssh r08922195@linux9" 
+alias rlinux10="ssh r08922195@linux10" 
+alias rlinux11="ssh r08922195@linux11" 
+alias rlinux12="ssh r08922195@linux12" 
+alias rlinux13="ssh r08922195@linux13" 
+alias rlinux14="ssh r08922195@linux14" 
+alias rlinux15="ssh r08922195@linux15" 
