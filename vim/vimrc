@@ -1,0 +1,124 @@
+call plug#begin('~/.vim/plugged')
+
+"Plug 'valloric/youcompleteme'
+
+Plug 'Yggdroot/indentLine'
+
+Plug 'vim-airline/vim-airline'
+
+Plug 'vim-airline/vim-airline-themes'
+
+Plug 'sheerun/vim-polyglot'
+
+Plug 'https://github.com/vim-scripts/taglist.vim'
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+"Plug 'https://github.com/kshenoy/vim-signature'
+
+Plug 'https://github.com/MattesGroeger/vim-bookmarks'
+
+call plug#end()
+
+" Plug vim-bookmarks
+"
+" Action    Shortcut    Command
+" Add/remove bookmark at current line                       mm  :BookmarkToggle
+" Add/edit/remove annotation at current line                mi  :BookmarkAnnotate <TEXT>
+" Jump to next bookmark in buffer                           mn  :BookmarkNext
+" Jump to previous bookmark in buffer                       mp  :BookmarkPrev
+" Show all bookmarks (toggle)                               ma  :BookmarkShowAll
+" Clear bookmarks in current buffer only                    mc  :BookmarkClear
+" Clear bookmarks in all buffers                            mx  :BookmarkClearAll
+" Move up bookmark at current line                  [count]mkk  :BookmarkMoveUp [<COUNT>]
+" Move down bookmark at current line                [count]mjj  :BookmarkMoveDown [<COUNT>]
+" Move bookmark at current line to another line     [count]mg   :BookmarkMoveToLine <LINE>
+" Save all bookmarks to a file                                  :BookmarkSave <FILE_PATH>
+" Load bookmarks from a file                                    :BookmarkLoad <FILE_PATH>
+
+let g:bookmark_sign = '>>'                          " Sets bookmark icon for sign column
+let g:bookmark_annotation_sign = '##'               " Sets bookmark annotation icon for sign column
+let g:bookmark_auto_close = 1                       " Automatically close bookmarks split when jumping to a bookmark
+let g:bookmark_save_per_working_dir = 1             " Save bookmarks per working dir, the folder you opened vim from
+let g:bookmark_auto_save = 1                        " Enables/disables automatic saving for bookmarks
+
+
+" Plug airline setting
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+set showtabline=2
+let g:airline_theme='papercolor'
+
+
+
+" This allows buffers to be hidden if you've modified a buffer.
+" This is almost a must if you wish to use buffers in this way.
+set hidden
+
+" To open a new empty buffer
+" This replaces :tabnew which I used to bind to this mapping
+nmap <leader>T :enew<cr>
+
+" Move to the next buffer
+nmap <leader>l :bnext<CR>
+
+" Move to the previous buffer
+nmap <leader>h :bprevious<CR>
+
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+nmap <leader>bq :bp <BAR> bd #<CR>
+
+" Show all open buffers and their status
+nmap <leader>bl :ls<CR>
+
+" Colorscheme
+syntax on
+colorscheme ron
+
+" Tlist
+filetype plugin on
+nnoremap <silent> <F8> :TlistToggle<CR>
+
+"Basic setting
+set nu
+set backspace=2
+set cursorline
+hi CursorLine cterm=bold ctermbg=240 ctermfg=none
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+set list lcs=tab:\|\ 
+set mouse=a
+set nocompatible              " be iMproved, required
+nmap <leader>r :source ~/.vimrc<CR>
+set path+=**
+set wildmenu
+set belloff=all
+
+"Highlight search
+set hlsearch
+nmap <F1> :FZF<CR>
+nmap <F2> :nohls<CR>
+nmap <F3> ::%s/\s\+$//e<CR>
+
+"Show number of character selected
+set showcmd
+
+
+"FZF
+" Mapping selecting mappings
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
+" Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
+" Advanced customization using autoload functions
+inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
