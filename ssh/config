@@ -1,0 +1,33 @@
+Host linux* bsd1
+  Compression yes
+  ForwardX11 yes
+  Hostname %h.csie.ntu.edu.tw
+  User r08922195
+  SendEnv LANG 
+#  User b02701216 
+Host solver peanuts newton patty optima marcie
+  Compression yes
+  ForwardX11 yes
+  Hostname %h.csie.ntu.edu.tw
+  User johncreed
+Host rasp  
+  IdentityFile ~/.ssh/rasp_key
+  Compression yes
+  ForwardX11 yes
+  Hostname peanuts.csie.ntu.edu.tw
+  User johncreed
+Host digit 
+  Compression yes
+  ForwardX11 yes
+  Hostname 178.128.53.121
+  User root
+Host djyhsia 
+  Compression yes
+  ForwardX11 yes
+  Hostname 178.128.53.121
+  User jyhsia
+Host lion 
+  Compression yes
+  ForwardX11 yes
+  Hostname %h.cs.ucla.edu
+  User jyhsia
