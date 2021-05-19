@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
-"Plug 'valloric/youcompleteme'
+"Plug 'ycm-core/YouCompleteMe'
 
 Plug 'Yggdroot/indentLine'
 
@@ -89,7 +89,8 @@ set nu
 set backspace=2
 set cursorline
 hi CursorLine cterm=bold ctermbg=240 ctermfg=none
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+" set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 set list lcs=tab:\|\ 
 set mouse=a
 set nocompatible              " be iMproved, required
@@ -101,8 +102,8 @@ set belloff=all
 "Highlight search
 set hlsearch
 nmap <F1> :FZF<CR>
-nmap <F2> :nohls<CR>
-nmap <F3> ::%s/\s\+$//e<CR>
+nmap <F2> :Rg<CR>
+nmap <F3> :nohls<CR>
 
 "Show number of character selected
 set showcmd
@@ -120,5 +121,13 @@ imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
-" Advanced customization using autoload functions
-inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
+" This is the default option:
+"   - Preview window on the right with 50% width
+"   - CTRL-/ will toggle preview window.
+" - Note that this array is passed as arguments to fzf#vim#with_preview function.
+" - To learn more about preview window options, see `--preview-window` section of `man fzf`.
+let g:fzf_preview_window = ['up:50%', 'ctrl-/']
+let g:fzf_layout = { 'right': '50%' }
+
+" [Tags] Command to generate tags file
+let g:fzf_tags_command = 'ctags -R'
