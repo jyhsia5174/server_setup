@@ -1,6 +1,7 @@
 #! /bin/bash
 
-cp vimrc ~/.vimrc
+PWD=`pwd`
+ln -sf $PWD/vimrc ~/.vimrc
 
 # install vim plug
 
