@@ -19,6 +19,11 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'https://github.com/MattesGroeger/vim-bookmarks'
 
+Plug 'airblade/vim-gitgutter'
+
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+
 call plug#end()
 
 " Plug vim-bookmarks
@@ -142,3 +147,11 @@ inoremap <expr> <c-x><c-f> fzf#vim#complete#path('rg --files')
 " Word completion with custom spec with popup layout option
 " inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'window': { 'width': 0.2, 'height': 0.9, 'xoffset': 1 }})
 
+" Markdown
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0 " ``` .... ```
+
+" vim-gitgutter
+set updatetime=100
+nmap <F4> :GitGutterLineHighlightsToggle<CR>
