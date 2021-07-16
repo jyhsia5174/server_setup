@@ -3,6 +3,7 @@ Host linux* bsd1
   ForwardX11 yes
   Hostname %h.csie.ntu.edu.tw
   SendEnv LANG 
+  User r08922195
 Host solver peanuts newton patty optima marcie
   Compression yes
   ForwardX11 yes
